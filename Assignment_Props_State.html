@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	   <title>My First React App</title>
+	</head>
+
+	<body>
+    <div id="app"></div>
+
+    <script 
+src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script 
+src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script 
+src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+      
+      class Greeting extends React.Component{
+          
+                constructor(props){
+                     super(props);
+                     this.state = {
+                     x: "In a future lesson, we will cover a Java Script Library called React"
+                     }
+                }
+                    
+                    
+                render() {
+                    return (
+                    <div>
+                        <h1>Hello {this.props.world}</h1>
+                        <p>What Follows are two different examples of a {this.props.dataTypes} in JavaScript</p>
+                        <p>Here we have an example of a string: {this.props.string} any text can be considered a string, this includes numbers too</p>
+                        <p>Here is an example of a different {this.props.dataTypes}: {this.props.number} this, as you may have guessed is called a number</p>
+                        <p>{this.state.x}. Briefly, React is a front end javascript library. Two Core principles of react are "state" and "props". It is important to know that "state" is declared and defined inside of a component, and is therefore unique to that component. "props" are declared and defined outside of the component, and this makes them reuseable in any component you create within a program. "props" are called immutable because they are passed into the parent component and can be passed to child elements of that component in whats called a unidirectional(one direction) flow. "state" can change based on the user interaction with the component in which a particular "state" resides. Event Handlers such as "onClick" can be used to create a number counter that could change each time a user clicked a button inside of a component.</p>
+                        
+                        
+                    </div>
+                    );
+                }
+            }
+
+             Greeting.defaultProps = {
+                   world: "World!",
+                   dataTypes: "Data Type",
+                   string: "'This is a string'",
+                   number: 2
+            }
+            
+            ReactDOM.render(
+            <Greeting />, document.getElementById('app')
+            );
+        </script>
+	</body>
+</html>
